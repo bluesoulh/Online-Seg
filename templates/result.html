@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head %}
+    <script src="{{ url_for('static',filename='jquery/jquery.3.6.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/segm.js') }}"></script>
+{% endblock %}
+{% block title %}
+    海上船舶在线语义分割平台-分割结果
+{% endblock %}
+
+{% block body %}
+            <img src='/static/segm_result_images/{{ filename }}'  alt='{{ filename }}' style="width: 1200px; height: auto; vertical-align: middle;">
+{% endblock %}

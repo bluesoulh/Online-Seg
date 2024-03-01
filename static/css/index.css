@@ -1,0 +1,44 @@
+.share-ul li{
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    background-color: #fff;
+    border-bottom:1px solid #eee;
+}
+.side-share{
+    flex-basis: 38px;
+    height:100%;
+}
+.side-share-image{
+    width: 300px;
+    height:auto;
+    border-radius: 3px;
+}
+
+.share-main{
+    flex: 1;
+    width: 660px;
+    margin-left:10px;
+    overflow: hidden;
+}
+
+.share-title a{
+    color: #259;
+    font-size:14px;
+    font-weight: 900;
+}
+.share-author{
+    font-size: 12px;
+    margin-top: 5px;
+}
+.share-content{
+    margin-top: 5px;
+    font-size:12px;
+}
+.share-detail{
+    text-align: right;
+    margin-top: 10px;
+}
+.share-detail .question-author{
+    margin-right:10px;
+}

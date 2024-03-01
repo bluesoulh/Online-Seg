@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+    海上船舶在线语义分割平台-首页
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="row" style="margin-top: 20px;">
+        <div class="col"></div>
+        <div class="col-10">
+            <ul class="share-ul">
+                {% for share in shares %}
+                    <li>
+                        <div class="side-share">
+                            <img class="side-share-image" src="../static/uploaded_images/{{ share.image_path }}"
+                                 alt="{{ share.image_path }}">
+                        </div>
+                        <div class="share-main">
+                            <div class="share-title"><a
+                                    href="{{ url_for('segmentation.share_detail',share_id = share.id) }}">{{ share.title }}</a>
+                            </div>
+                            <div class="share-content">{{ share.content }}</div>
+                            <div class="share-detail">
+                                <span class="share-author">{{ share.author.username }}</span>
+                                <span class="share-time">{{ share.create_time }}</span>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col"></div>
+    </div>
+{% endblock %}
